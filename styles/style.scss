@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: larger;
+  transition: transform 1s ease-in-out;
+}
+
+.mobile {
+  display: none;
+}
+
+.btn {
+  padding: 5px;
+  border-radius: 5px;
+  //   font-family: "Architects Daughter", cursive;
+  font-size: large;
+  background-color: lightblue;
+}
+
+h2 {
+  font-family: "Architects Daughter", cursive;
+  text-align: center;
+}
+
+nav {
+  background: rgb(144, 144, 144);
+  background: linear-gradient(
+    170deg,
+    rgb(175, 175, 175) 0%,
+    rgb(231, 231, 231) 100%
+  );
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  img {
+    width: 20%;
+    min-width: 150px;
+  }
+  div {
+    flex: 1;
+    &.nav-links {
+      display: flex;
+      justify-content: space-around;
+      a {
+        text-decoration: none;
+        color: orange;
+        padding: 1%;
+        border-radius: 5%;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: rgba(255, 166, 0, 0.671);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+header {
+  background: url("../images/texture.png") no-repeat center center/cover;
+  padding: 10% 1%;
+  h1 {
+    font-family: "Architects Daughter", cursive;
+    margin-top: 10%;
+  }
+  p {
+    color: rgb(82, 82, 82);
+    font-weight: 600;
+  }
+}
+
+#services {
+  p {
+  }
+}
+
+@media (max-width: 500px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 5% 10% 5%;
+    h2 {
+      margin-top: 5%;
+    }
+    p {
+      padding: 1%;
+      margin: 6%;
+      font-size: medium;
+    }
+    button {
+      margin: auto;
+    }
+  }
+  #nav_mobile {
+    z-index: 5;
+    #ham {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45px;
+      height: 55px;
+      margin: 10px 30px;
+      //   background-color: aqua;
+      #ham-lines {
+        position: relative;
+        top: 26px;
+        background-color: rgb(85, 85, 85);
+        width: 40px;
+        height: 3px;
+        transition: all 0.5s ease;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10px;
+          background-color: inherit;
+          width: 40px;
+          height: 3px;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: -10px;
+          background-color: inherit;
+          width: 40px;
+          height: 3px;
+        }
+      }
+      #ham-lines.animate {
+        transform: rotate(360deg);
+        height: 0;
+        &::after {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &::before {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+  #nav-links_mobile {
+    position: fixed;
+    width: 75%;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    a {
+      text-decoration: none;
+      margin: 10px;
+      padding: 3px;
+    }
+  }
+  body.move {
+    transform: translateX(-75%);
+  }
+  header {
+    text-align: center;
+    h1 {
+      font-family: "Architects Daughter", cursive;
+    }
+    p {
+      font-size: medium;
+      padding: 20px 20px 50px 20px;
+    }
+  }
+  #services {
+  }
+  hr {
+    width: 80%;
+    margin: auto;
+  }
+}

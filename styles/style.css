@@ -1,0 +1,218 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: larger;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
+}
+
+.mobile {
+  display: none;
+}
+
+.btn {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: large;
+  background-color: lightblue;
+}
+
+h2 {
+  font-family: "Architects Daughter", cursive;
+  text-align: center;
+}
+
+nav {
+  background: #909090;
+  background: linear-gradient(170deg, #afafaf 0%, #e7e7e7 100%);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+nav img {
+  width: 20%;
+  min-width: 150px;
+}
+
+nav div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+nav div.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+nav div.nav-links a {
+  text-decoration: none;
+  color: orange;
+  padding: 1%;
+  border-radius: 5%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+nav div.nav-links a:hover {
+  background-color: rgba(255, 166, 0, 0.671);
+  color: white;
+}
+
+header {
+  background: url("../images/texture.png") no-repeat center center/cover;
+  padding: 10% 1%;
+}
+
+header h1 {
+  font-family: "Architects Daughter", cursive;
+  margin-top: 10%;
+}
+
+header p {
+  color: #525252;
+  font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5% 5% 10% 5%;
+  }
+  section h2 {
+    margin-top: 5%;
+  }
+  section p {
+    padding: 1%;
+    margin: 6%;
+    font-size: medium;
+  }
+  section button {
+    margin: auto;
+  }
+  #nav_mobile {
+    z-index: 5;
+  }
+  #nav_mobile #ham {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 55px;
+    margin: 10px 30px;
+  }
+  #nav_mobile #ham #ham-lines {
+    position: relative;
+    top: 26px;
+    background-color: #555555;
+    width: 40px;
+    height: 3px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  #nav_mobile #ham #ham-lines::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    background-color: inherit;
+    width: 40px;
+    height: 3px;
+  }
+  #nav_mobile #ham #ham-lines::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    background-color: inherit;
+    width: 40px;
+    height: 3px;
+  }
+  #nav_mobile #ham #ham-lines.animate {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    height: 0;
+  }
+  #nav_mobile #ham #ham-lines.animate::after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  #nav_mobile #ham #ham-lines.animate::before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  #nav-links_mobile {
+    position: fixed;
+    width: 75%;
+    left: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 1;
+  }
+  #nav-links_mobile a {
+    text-decoration: none;
+    margin: 10px;
+    padding: 3px;
+  }
+  body.move {
+    -webkit-transform: translateX(-75%);
+            transform: translateX(-75%);
+  }
+  header {
+    text-align: center;
+  }
+  header h1 {
+    font-family: "Architects Daughter", cursive;
+  }
+  header p {
+    font-size: medium;
+    padding: 20px 20px 50px 20px;
+  }
+  hr {
+    width: 80%;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
